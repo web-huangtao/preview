@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/rem.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="banner">
+      <div class="wukong">
+        <div class="wukong-img"></div>
+        <div class="message">{{ message }}</div>
+      </div>
+      <div class="bajie"></div>
+      <div class="tangseng"></div>
+      <div class="shaseng"></div>
+    </div>
+  </div>
+  <script>
+    let temper
+    new Vue({
+      el: '#app', 
+      data() {
+        return {
+          message: '',
+          list: [
+            '书山有路勤为径，学海无涯苦作舟',
+            "乘风破浪会有时，直挂云帆济沧海",
+            "山穷水复疑无路，柳暗花明又一村",
+            "会当凌绝顶，一览纵山小"
+          ]
+        }
+      },
+      mounted() {
+        this.say()
+      },
+      destroyed() {
+        clearInterval(temper)
+      },
+      methods: {
+        say() {
+          let i = 0
+          this.message = this.list[0]
+          temper = setInterval(()=> {
+            i++
+            if (i >=4) {
+              i = 0
+            }
+            this.message = this.list[i]
+          }, 3000)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

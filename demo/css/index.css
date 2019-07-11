@@ -1,0 +1,128 @@
+@charset 'utf-8';
+#app {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+}
+.banner {
+  width: 100%;
+  height: 300px;
+  background: -webkit-linear-gradient(left, #c2b43e 0%, #408b7a 25%, #c0625a 100%); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #c2b43e 0%, #408b7a 25%, #c0625a 100%); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #c2b43e 0%, #408b7a 25%, #c0625a 100%); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #c2b43e 0%, #408b7a 25%, #c0625a 100%); /* 标准的语法 */
+  position: relative;
+}
+.wukong {
+  animation: wukong 3s infinite ease;
+  /* Firefox: */
+  -moz-animation: wukong 3s infinite ease;
+  /* Safari 和 Chrome: */
+  -webkit-animation: wukong 3s infinite ease-in-out;
+  /* Opera: */
+  -o-animation: wukong 3s infinite ease;
+  position: absolute;
+  right: 750px;
+  top: 50px;
+}
+.wukong-img {
+  width: 175px;
+  height: 175px;
+  background: url('../imgs/wukong.png') no-repeat;
+  background-size: cover;
+}
+.message{
+  padding: 5px 20px;
+  color: #000;
+  font-size: 15px;
+  position: absolute;
+  top: -38px;
+  right: 88px;
+  background-color:#f3e100;
+  white-space: nowrap;
+}
+.message:before{
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 100%;
+  margin-left: 10px;
+  float: left;
+  width: 0; 
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color:#f3e100 transparent transparent transparent;
+}
+.bajie {
+  width: 200px;
+  height: 180px;
+  background: url('../imgs/bajie.png') no-repeat;
+  animation: bajie 1s steps(8) infinite;
+  /* Firefox: */
+  -moz-animation: bajie 1s steps(8) infinite;
+  /* Safari 和 Chrome: */
+  -webkit-animation: bajie 1s steps(8) infinite;
+  /* Opera: */
+  -o-animation: bajie 1s steps(8) infinite;
+  position: absolute;
+  right: 450px;
+  bottom: 30px;
+}
+.tangseng {
+  width: 170px;
+  height: 240px;
+  background: url('../imgs/tangseng.png') no-repeat;
+  animation: tangseng 1s steps(8) infinite;
+  /* Firefox: */
+  -moz-animation: tangseng 1s steps(8) infinite;
+  /* Safari 和 Chrome: */
+  -webkit-animation: tangseng 1s steps(8) infinite;
+  /* Opera: */
+  -o-animation: tangseng 1s steps(8) infinite;
+  position: absolute;
+  right: 300px;
+  bottom: 5px;
+}
+.shaseng {
+  width: 210px;
+  height: 200px;
+  background: url('../imgs/shaseng.png') no-repeat;
+  position: absolute;
+  animation: shaseng 1s steps(8) infinite;
+  /* Firefox: */
+  -moz-animation: shaseng 1s steps(8) infinite;
+  /* Safari 和 Chrome: */
+  -webkit-animation: shaseng 1s steps(8) infinite;
+  /* Opera: */
+  -o-animation: shaseng 1s steps(8) infinite;
+  right: 80px;
+  bottom: 10px;
+}
+
+@keyframes wukong {
+  0% {
+    top: 45px;
+  }
+  50% {
+    top: 70px;
+  }
+  100% {
+    top: 45px;
+  }
+}
+@keyframes bajie {
+  to {
+    background-position: -1600px 0;
+  }
+}
+@keyframes tangseng {
+  to {
+    background-position: -1360px 0;
+  }
+}
+@keyframes shaseng {
+  to {
+    background-position: -1680px 0;
+  }
+}
